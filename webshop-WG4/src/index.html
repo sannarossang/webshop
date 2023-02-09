@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webbshop Grupp 4</title>
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/brands.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/solid.css" />
+    <script
+      src="https://kit.fontawesome.com/918165918f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../src/ts/startpage.ts" type="module"></script>
+  </head>
+  <body>
+    <!--Header-->
+    <header id="header">
+      <!--Ikon för hamburgermeny-->
+      <button id="burgerMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <!--Hamburgermeny-->
+      <div id="burgerModal" class="modal">
+        <div class="burger-modal-content">
+          <a class="burgerLink" href="./index.html">Hem</a>
+          <a class="burgerLink" href="./html/products.html">Produkter</a>
+          <a class="burgerLink" href="./html/checkout.html">Kassa</a>
+        </div>
+      </div>
+      <!-- Logga -->
+      <a href="index.html" id="logo">
+        <img src="../src/assets/upthewall-icon.png" alt="Logo" />
+      </a>
+      <!-- Ikon varukorg -->
+
+      <div id="shoppingcart">
+        <button id="cartButton">
+          <li
+            class="fa-solid fa-cart-shopping"
+            value=""
+            id="addProductCounter"
+          ></li>
+        </button>
+        <!-- Modal för varukorg -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <button id="closeButton" class="close">&times;</button>
+            <h2>Din varukorg</h2>
+            <hr />
+            <div id="modalContainer"></div>
+            <button id="clearCartinModal">Töm varukorgen</button>
+            <p id="sumProducts">Summera produkter</p>
+            <a id="checkoutBtn" href="./html/checkout.html"
+              ><button id="paymentBtn">Gå till kassan</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <nav>
+        <a href="./index.html">Hem</a>
+        <a href="./html/products.html">Produkter</a>
+        <a href="./html/checkout.html">Kassa</a>
+      </nav>
+    </header>
+    <!-- Startsida bild och välkomsttext -->
+    <main>
+      <div id="startpageImage">
+        <article id="startArticle">
+          <h1>Snygga tapeter för hemmets alla rum</h1>
+          <p>
+            Låt dig inspireras av våra miljövänliga och hållbara tapeter.
+            Filtrera och sortera efter önskemål för att enkelt hitta din
+            drömtapet. Köp din tapet online och få leverans till närmaste
+            utlämningsställe!
+          </p>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <!-- SoMe-->
+      <p>
+        <a href="https://www.instagram.com/unnizetterling/"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/unnizetterling/"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="https://www.instagram.com/unnizetterling/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </p>
+      <!-- Info om företaget-->
+      <span class="footerContact">
+        <h3>Up The Wall</h3>
+        <p>Blomstervägen 8</p>
+        <p>111 21 Stockholm</p></span
+      >
+      <!-- Betalningsalternativ-->
+      <p>
+        <i class="fa-brands fa-apple-pay"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </p>
+    </footer>
+  </body>
+</html>
