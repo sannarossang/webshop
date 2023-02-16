@@ -1,0 +1,79 @@
+@use "mixins";
+
+#productDetailMain {
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+#productDetailMain h1 {
+  color: black;
+  text-align: start;
+  margin-top: 10px;
+}
+
+#productDetailContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: start;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .productdetail__image {
+    width: 350px;
+    height: 350px;
+  }
+  @include mixins.desktop {
+    width: 70%;
+    height: 400px;
+    flex-direction: row;
+    .productdetail__image {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  span {
+    margin-top: 20px;
+  }
+  button {
+    width: 50%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: rgb(212, 212, 212);
+  }
+  @include mixins.desktop {
+    width: 40%;
+    padding: 30px;
+  }
+}
+
+.productDetails__artist {
+  font-size: 13px;
+  color: rgb(165, 165, 165);
+  font-weight: lighter;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.productDetails__input {
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 10px;
+  width: 10%;
+}

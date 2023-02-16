@@ -1,0 +1,279 @@
+@use "mixins";
+@use "variables";
+
+#productsMain {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  @include mixins.desktop {
+    width: 90%;
+  }
+  @include mixins.sannasdesktop {
+    width: 71%;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  line-height: normal;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 150px;
+  @include mixins.desktop {
+    width: 250px;
+    margin: 20px;
+  }
+
+  &__article {
+    width: 190px;
+  }
+
+  &__image {
+    height: 150px;
+    width: 150px;
+    @include mixins.desktop {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
+  &__title {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    @include mixins.desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__artist {
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgb(165, 165, 165);
+    font-weight: lighter;
+    margin-bottom: 10px;
+    margin-top: 0;
+    @include mixins.desktop {
+      font-size: 13px;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  &__description {
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 20px;
+    display: none;
+  }
+
+  &__button {
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    margin-top: 20px;
+    border: none;
+    background-color: white;
+    font-size: 15pt;
+    cursor: pointer;
+    margin-right: 10%;
+    @include mixins.desktop {
+    }
+  }
+  &__divContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+}
+
+.product__button:hover {
+  color: rgb(197, 192, 184);
+}
+
+.product__button:active {
+  transform: translateY(4px);
+}
+
+.product:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.productInModal__button,
+#returnButton {
+  width: fit-content;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 15pt;
+  height: 40px;
+}
+
+.modalDeleteBtn {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  font-size: 12pt;
+  position: absolute;
+  right: 4%;
+  @include mixins.desktop {
+    font-size: 13pt;
+    right: 7%;
+  }
+}
+
+#returnButton {
+  position: absolute;
+  margin: 10px;
+}
+
+.productInModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 20px;
+  width: 92%;
+  line-height: normal;
+  height: 100px;
+  font-size: 10pt;
+  &__image {
+    width: 100px;
+    height: 100px;
+    @include mixins.desktop {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  &__article {
+    padding: 20px;
+  }
+  &__title {
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 70%;
+    @include mixins.desktop {
+      width: 150px;
+      font-size: 16pt;
+    }
+  }
+  &__artist {
+    font-size: 8pt;
+    color: rgb(165, 165, 165);
+    font-weight: lighter;
+    margin-bottom: 10px;
+    margin-top: 0;
+    @include mixins.desktop {
+      font-size: 12pt;
+    }
+  }
+  &__description {
+    font-size: 16px;
+    display: none;
+  }
+  @include mixins.desktop {
+    height: 150px;
+    margin-top: 10%;
+    font-size: 14pt;
+  }
+}
+
+.product__button {
+  display: flex;
+}
+
+.counter-controls {
+  width: 50px;
+  display: flex;
+  height: 39px;
+  position: absolute;
+  left: 85%;
+  @include mixins.desktop {
+    width: 50px;
+    height: 39px;
+    left: 36%;
+  }
+}
+
+.modal-counter-controls {
+  display: flex;
+  width: 15px;
+  position: absolute;
+  right: 25%;
+  @include mixins.desktop {
+    width: 50px;
+    height: 39px;
+    right: 13%;
+  }
+}
+
+.product__plusMinus {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 30px;
+}
+
+.product__quantity {
+  padding: 10px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.decrease {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.increase {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+
+#filter {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+}
+
+.filterBtn {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgb(204, 201, 199);
+  cursor: pointer;
+  margin-right: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
+.filterBtn:hover {
+  background-color: rgb(212, 212, 212);
+}
